@@ -1,4 +1,4 @@
-# The total number of months included in the dataset
+
 total_months =0
 # The net total amount of "Profit/Losses" over the entire period
 total_profit_loss_amount =0.00
@@ -18,6 +18,8 @@ with open(file_path) as csvfile:
     print(f"CSV Header: {csv_header}")
     # Read each row of data after the header
     for row in csvreader:
+        # The total number of months included in the dataset
+      total_months = total_months +1
       print(row)
 
 # results should look like
