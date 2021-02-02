@@ -9,7 +9,7 @@ greatest_increase = {}
 # The greatest decrease in losses (date and amount) over the entire period
 greatest_decrease = {}
 import csv
-file_path = "../Resources/budget_data.csv"
+file_path = "./Resources/budget_data.csv"
 with open(file_path) as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile)
