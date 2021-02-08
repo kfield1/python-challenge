@@ -1,4 +1,3 @@
-
 total_months =0
 total_profit_loss_amount =0.00
 average_profit_loss = 0.00
@@ -15,11 +14,11 @@ with open(file_path) as csvfile:
     # Read each row of data after the header
     for row in csvreader:
         # The total number of months included in the dataset
-         total_months = total_months +1
-         date = row[0]
-         profit = float(row[1])
-         sum_profit = 0
-         sum_loss = 0
+        total_months = total_months +1
+        date = row[0]
+        profit = float(row[1])
+        sum_profit = 0
+        sum_loss = 0
         # The net total amount of "Profit/Losses" over the entire period
         if profit >0:
             sum_profit = sum_profit + profit
