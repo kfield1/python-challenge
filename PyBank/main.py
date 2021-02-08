@@ -34,6 +34,8 @@ with open(file_path) as csvfile:
 print("Financial Analysis")
 print("---------------------")
 print(f"Total Months: {total_months}")
+print("Total:")
+print("Average Change")
 print(f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})")
 # results should look like
 # Financial Analysis
