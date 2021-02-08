@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 total_votes = 0
-
 
 import csv
 file_path = "./Resources/election_data.csv"
@@ -35,32 +33,6 @@ print("-------------------------")
 
 
 # What it should look like
-=======
-# The total number of votes cast
-total_votes = 0
-
-# A complete list of candidates who received votes
-import csv
-file_path = "../Resources/election_data.csv"
-
-with open(file_path) as csvfile:
-    
-    csvreader = csv.reader(csvfile)
-    
-    csv_header = next(csvreader)
-   
-    for row in csvreader:
-
-# The percentage of votes each candidate won
-
-
-# The total number of votes each candidate won
-
-
-# The winner of the election based on popular vote.
-
-
->>>>>>> cf1df046be2518b04d129361efd0c3fdb3cd3074
 # Election Results
 # -------------------------
 # Total Votes: 3521001
@@ -72,10 +44,7 @@ with open(file_path) as csvfile:
 # -------------------------
 # Winner: Khan
 # -------------------------
-<<<<<<< HEAD
 
 
 
 
-=======
->>>>>>> cf1df046be2518b04d129361efd0c3fdb3cd3074
