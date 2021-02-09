@@ -16,31 +16,34 @@ with open(file_path) as csvfile:
         # The total number of votes cast
         total_votes = total_votes + 1
         # A complete list of candidates who received votes
-        candidate_name = row["Candidate"]
+        candidate_name = row[2]
         if candidate_name not in candidate_options:
             candidate_options.append(candidate_name)
             candidate_votes[candidate_name]= 0
         candidate_votes[candidate_name] = candidate_votes[candidate_name] +1
 
-for candidate in candidate_votes:
-        # The percentage of votes each candidate won
+    for candidate in candidate_votes:
+         # The percentage of votes each candidate won
         votes = candidate_votes.get(candidate)
         vote_percentage = float(votes) / float(total_votes) * 100
-
+            
         # The total number of votes each candidate won
         if (votes > winning_count):
             winning_count = votes
             winning_candidate = candidate
 
         # The winner of the election based on popular vote.
-        voter_output = f"{candidate}: {vote_percentage:.3f}% ({votes})"
+        
 # print results
 print("Election Results")
 print("-------------------------")
 print(f"Total Votes: {total_votes}")
 print("-------------------------")
-print(voter_output, end="")
-
+for candidate in candidate_votes:
+    voter_output = f"{candidate}: {vote_percentage:.3f}% ({votes})" 
+    print(voter_output)
+print("-------------------------")
+print(f"Winner:{winning_candidate}")
 # What it should look like
 # Election Results
 # -------------------------
