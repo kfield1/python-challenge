@@ -23,10 +23,11 @@ with open(file_path) as csvfile:
         if profit >0:
             sum_profit = sum_profit + profit
         elif profit <0:
-            sum_loss = sum_loss + profit
-        total_profit_loss_amount = sum_profit - sum_loss
+            sum_loss = profit - sum_loss
+        total_profit_loss_amount = sum_profit + sum_loss
             
         # Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
+        average_profit_loss = total_profit_loss_amount/total_months
         # The greatest increase in profits (date and amount) over the entire period
         if (profit > greatest_increase["amount"]):
             greatest_increase["date"] = date
@@ -41,9 +42,11 @@ with open(file_path) as csvfile:
 print("Financial Analysis")
 print("---------------------")
 print(f"Total Months: {total_months}")
-print(f"Total: {total_profit_loss_amount}")
-print("Average Change:")
+print(f"Total: (${total_profit_loss_amount})")
+print(f"Average Change: (${average_profit_loss})")
 print(f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})")
+print(f"Greatest Decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})")
+
 # results should look like
 # Financial Analysis
 # ----------------------------
