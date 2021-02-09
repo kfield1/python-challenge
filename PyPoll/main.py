@@ -1,6 +1,8 @@
 total_votes = 0
 candidate_options =[]
 candidate_votes = {}
+winning_candidate = ""
+winning_count = 0
 import csv
 file_path = "./Resources/election_data.csv"
 with open(file_path) as csvfile:
@@ -20,24 +22,24 @@ with open(file_path) as csvfile:
             candidate_votes[candidate_name]= 0
         candidate_votes[candidate_name] = candidate_votes[candidate_name] +1
 
-
-
+for candidate in candidate_votes:
         # The percentage of votes each candidate won
         votes = candidate_votes.get(candidate)
         vote_percentage = float(votes) / float(total_votes) * 100
 
         # The total number of votes each candidate won
-
+        if (votes > winning_count):
+            winning_count = votes
+            winning_candidate = candidate
 
         # The winner of the election based on popular vote.
-
+        voter_output = f"{candidate}: {vote_percentage:.3f}% ({votes})"
 # print results
 print("Election Results")
 print("-------------------------")
 print(f"Total Votes: {total_votes}")
 print("-------------------------")
-print(candidate_name)
-
+print(voter_output, end="")
 
 # What it should look like
 # Election Results
