@@ -1,5 +1,6 @@
 total_votes = 0
-
+candidate_options =[]
+candidate_votes = {}
 import csv
 file_path = "./Resources/election_data.csv"
 with open(file_path) as csvfile:
@@ -12,8 +13,11 @@ with open(file_path) as csvfile:
     for row in csvreader:
         # The total number of votes cast
         total_votes = total_votes + 1
-
         # A complete list of candidates who received votes
+        candidate_name = row["Candidate"]
+        if candidate_name not in candidate_options:
+            candidate_options.append(candidate_name)
+
 
 
         # The percentage of votes each candidate won
@@ -29,7 +33,7 @@ print("Election Results")
 print("-------------------------")
 print(f"Total Votes: {total_votes}")
 print("-------------------------")
-
+print(candidate_name)
 
 
 # What it should look like
