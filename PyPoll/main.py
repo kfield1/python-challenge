@@ -17,11 +17,14 @@ with open(file_path) as csvfile:
         candidate_name = row["Candidate"]
         if candidate_name not in candidate_options:
             candidate_options.append(candidate_name)
+            candidate_votes[candidate_name]= 0
+        candidate_votes[candidate_name] = candidate_votes[candidate_name] +1
 
 
 
         # The percentage of votes each candidate won
-
+        votes = candidate_votes.get(candidate)
+        vote_percentage = float(votes) / float(total_votes) * 100
 
         # The total number of votes each candidate won
 
